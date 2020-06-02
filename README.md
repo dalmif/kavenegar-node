@@ -16,7 +16,7 @@ Anyway there is good tutorial about <a href="http://gun.io/blog/how-to-github-fo
 <p> For installing Kavenegar  use this command via npm </p>
 
 ```node
-npm install kavenegar
+npm i kavenegar_promise
 ```
 
 
