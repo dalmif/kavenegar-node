@@ -28,19 +28,18 @@ If you don't have npm you can easily install it from  [npm website](https://www.
 Well, There is two  example to Send SMS by node below.
 
 ```node
-var Kavenegar = require('kavenegar');
-var api = Kavenegar.KavenegarApi({
+let Kavenegar = require('kavenegar');
+let api = Kavenegar.KavenegarApi({
     apikey: 'your apikey here'
 });
-api.Send({
+let response = await api.Send({
         message: "خدمات پیام کوتاه کاوه نگار",
         sender: "10004346",
         receptor: "09123456789,09367891011"
-    },
-    function(response, status) {
-        console.log(response);
-        console.log(status);
     });
+console.log(response.status)
+console.log(response.message)
+
 /*
 sample output
 {
@@ -76,18 +75,17 @@ sample output
 */
 ```
 ```node
-var Kavenegar = require('kavenegar');
-var api = Kavenegar.KavenegarApi({
+let Kavenegar = require('kavenegar');
+let api = Kavenegar.KavenegarApi({
     apikey: 'your apikey here'
 });
-api.VerifyLookup({
+let response = await api.VerifyLookup({
     receptor: "09361234567",
     token: "852596",
     template: "registerverify"
-}, function(response, status) {
-    console.log(response);
-    console.log(status);
 });
+console.log(response.response);
+console.log(response.status);
 /*
 sample output
 {
